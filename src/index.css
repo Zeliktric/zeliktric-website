@@ -1,13 +1,184 @@
+/*########## COLOUR PALLETE ##########*/
+:root {
+    --yellow: #FFDE59;
+}
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+#zeliktric {
+    font-family: "Poppins", sans-serif;
+    color: var(--yellow);
+}
+
+.main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.background {
+    opacity: 100%;
+    min-height: 100vh;
+    transition: opacity 1s;
+}
+
+.fade {
+    opacity: 25%;
+}
+
+.background > div {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.show {
+    background-size: 110vh !important;
+}
+
+.hide {
+    opacity: 0% !important;
+}
+
+.bolts {
+    background-image: url("./Images/Bolts.png");
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-position: center;
+    z-index: -2;
+
+    transition: top 1.5s, background-size 1s;
+    animation: lightningBolts 4s linear;
+    opacity: 1;
+}
+
+@keyframes lightningBolts {
+    0% { opacity: 0; } 
+    30% { opacity: 0; }
+    31% { opacity: 1; }
+    35% { opacity: 0; }
+    40% { opacity: 0; } 
+    41% { opacity: 1; }
+    50% { opacity: 0; }
+
+    60% { opacity: 0; }
+    61% { opacity: 1; }
+    65% { opacity: 0; }
+    70% { opacity: 1; } 
+    71% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.name {
+    background-image: url("./Images/Name.png");
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-position: center;
+    z-index: -1;
+    opacity: 1;
+
+    transition: top 1.5s, background-size 1s;
+    animation: lightningName 4s linear;
+}
+
+@keyframes lightningName {
+    0% { opacity: 0; } 
+    72% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.bgImg {
+    position: absolute;
+    
+    width: 50vw;
+    
+}
+
+.homeText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    transition: opacity 1.5s;
+}
+
+.homeText p {
+    text-align: center;
+}
+
+.title {
+    font-size: 3em;
+}
+
+.subtitle {
+    font-size: 1.75em;
+    text-decoration: underline solid var(--yellow) 2px;
+}
+
+.zeliktricLogo {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+
+    right: 10em;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    font-size: 1.25em;
+}
+
+.navLink {
+    opacity: 50%;
+
+    transition: opacity 0.3s;
+}
+
+.navLink:hover, .navLink:active {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.navLink:hover .underline, .navLink:active .underline {
+    width: 1.5em
+}
+
+.underline {
+    border-bottom: 2px solid var(--yellow);
+    width: 0em;
+
+    transition: width 0.3s;
+}
+
+.active {
+    opacity: 100%;
+}
+
+.active .underline {
+    border-bottom: 2px solid var(--yellow);
+    width: 1.5em;
 }
