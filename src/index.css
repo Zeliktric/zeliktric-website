@@ -24,17 +24,29 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
-#zeliktric {
+p {
+    font-size: 1.25em;
+}
+
+.yellow {
     font-family: "Poppins", sans-serif;
     color: var(--yellow);
 }
 
 .main {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
+    position: absolute;
     height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.about {
+    display: flex;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -42,10 +54,12 @@ h1, h2, h3, h4, h5, h6, p {
     opacity: 100%;
     min-height: 100vh;
     transition: opacity 1s;
+    width: 100%;
+    position: absolute;
 }
 
 .fade {
-    opacity: 25%;
+    opacity: 15%;
 }
 
 .background > div {
@@ -60,6 +74,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hide {
     opacity: 0% !important;
+    pointer-events: none;
+}
+
+.right {
+    background-position: right !important;
 }
 
 .bolts {
@@ -69,26 +88,18 @@ h1, h2, h3, h4, h5, h6, p {
     background-position: center;
     z-index: -2;
 
-    transition: top 1.5s, background-size 1s;
+    transition: top 1.5s, background-size 1s, background-position 1s;
     animation: lightningBolts 4s linear;
     opacity: 1;
 }
 
 @keyframes lightningBolts {
     0% { opacity: 0; } 
-    30% { opacity: 0; }
-    31% { opacity: 1; }
-    35% { opacity: 0; }
-    40% { opacity: 0; } 
-    41% { opacity: 1; }
-    50% { opacity: 0; }
 
-    60% { opacity: 0; }
-    61% { opacity: 1; }
-    65% { opacity: 0; }
-    70% { opacity: 1; } 
-    71% { opacity: 0; }
-    100% { opacity: 1; }
+    10% { opacity: 0; }
+    11% { opacity: 1; }
+    20% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 .name {
@@ -99,14 +110,14 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: -1;
     opacity: 1;
 
-    transition: top 1.5s, background-size 1s;
+    transition: top 1.5s, background-size 1s, background-position 1s;
     animation: lightningName 4s linear;
 }
 
 @keyframes lightningName {
     0% { opacity: 0; } 
-    72% { opacity: 0; }
-    100% { opacity: 1; }
+    22% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 .bgImg {
@@ -119,7 +130,6 @@ h1, h2, h3, h4, h5, h6, p {
 .homeText {
     display: flex;
     flex-direction: column;
-    width: 100%;
 
     transition: opacity 1.5s;
 }
@@ -130,11 +140,25 @@ h1, h2, h3, h4, h5, h6, p {
 
 .title {
     font-size: 3em;
+
+    transition: all 0.3s;
+    transition-delay: 0.9s;
 }
 
 .subtitle {
     font-size: 1.75em;
-    text-decoration: underline solid var(--yellow) 2px;
+    text-decoration: underline solid var(--yellow) 1px;
+
+    transition: all 0.3s;
+    transition-delay: 0.9s;
+}
+
+.title.hide {
+    transition-delay: 0s;
+}
+
+.subtitle.hide {
+    transition-delay: 0s;
 }
 
 .zeliktricLogo {
@@ -145,11 +169,17 @@ h1, h2, h3, h4, h5, h6, p {
     right: 10em;
 }
 
-.navigation {
+.nav {
+    margin-top: 2.5em !important;
+}
+
+.navHome {
     display: flex;
     justify-content: center;
     gap: 2em;
     font-size: 1.25em;
+
+    transition: all 1s;
 }
 
 .navLink {
@@ -159,7 +189,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .navLink:hover, .navLink:active {
-    opacity: 100%;
+    opacity: 99%;
     cursor: pointer;
 }
 
@@ -175,10 +205,89 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .active {
-    opacity: 100%;
+    opacity: 99%;
 }
 
 .active .underline {
     border-bottom: 2px solid var(--yellow);
     width: 1.5em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    height: 100%;
+
+    z-index: -1;
+    transition: opacity 1s;
+}
+
+.info .navHome {
+    margin: 3em 3em 0em 3em;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: center;
+    
+    height: 100%;
+    width: 100%;
+    margin: 1em 1em;
+}
+
+.infoContainer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 30em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(16, 16, 16); */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card h3 {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+.card p {
+    text-align: left;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    gap: 1em;
+    bottom: 1em;
+    width: 100%;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+}
+
+.socials img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
