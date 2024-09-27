@@ -13,6 +13,7 @@ export default function Home() {
     const bolts = useRef(null);
     const name = useRef(null);
     const homeText = useRef(null);
+    const socials = useRef(null);
 
     // Sleep/delay function
     const timer = ms => new Promise(res => setTimeout(res, ms));
@@ -30,6 +31,7 @@ export default function Home() {
             
             if(homeText.current != null) {
                 homeText.current.classList.remove("hide");
+                socials.current.classList.remove("hide");
             }
         }
 
@@ -68,7 +70,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="socials">
+            <div className="socials hide" ref={socials}>
                 <div className="social">
                     <a href="https://github.com/zeliktric" target="_blank" rel="noreferrer">
                         <img src={github} />

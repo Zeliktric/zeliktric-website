@@ -271,6 +271,8 @@ p {
     gap: 1em;
     bottom: 1em;
     width: 100%;
+
+    transition: opacity 1.5s;
 }
 
 .social {
