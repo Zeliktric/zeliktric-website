@@ -28,6 +28,19 @@ p {
     font-size: 1.25em;
 }
 
+a {
+    text-decoration: none;
+}
+
+.aButton {
+    transition: 0.3s all;
+}
+
+.aButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .yellow {
     font-family: "Poppins", sans-serif;
     color: var(--yellow);
@@ -46,8 +59,27 @@ p {
 
 .about {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 100%;
+}
+
+.about img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.about img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.devLang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.5em;
+    height: 7.5em;
 }
 
 .background {
@@ -60,6 +92,7 @@ p {
 
 .fade {
     opacity: 15%;
+    z-index: -1;
 }
 
 .background > div {
@@ -81,16 +114,47 @@ p {
     background-position: right !important;
 }
 
-.bolts {
-    background-image: url("./Images/Bolts.png");
+.backgroundImg {
     background-repeat: no-repeat;
-    background-size: 100vh;
     background-position: center;
     z-index: -2;
 
-    transition: top 1.5s, background-size 1s, background-position 1s;
-    animation: lightningBolts 4s linear;
+    transition: top 1.5s, background-size 1s, background-position 1s, opacity 1.5s;
+}
+
+.python {
+    background-image: url("./Images/python.png");
+    background-size: 80vh;
+}
+
+.cs {
+    background-image: url("./Images/cs.png");
+    background-size: 90vh;
+}
+
+.java {
+    background-image: url("./Images/java.png");
+    background-size: 80vh;
+}
+
+.react {
+    background-image: url("./Images/react.png");
+    background-size: 80vh;
+}
+
+.htmlcssjs {
+    background-image: url("./Images/htmlcssjs.png");
+    background-size: 90vh;
+}
+
+.bolts {
+    background-image: url("./Images/bolts.png");
+    background-size: 100vh;
     opacity: 1;
+}
+
+.boltsAnim {
+    animation: lightningBolts 4s linear;
 }
 
 @keyframes lightningBolts {
@@ -103,14 +167,14 @@ p {
 }
 
 .name {
-    background-image: url("./Images/Name.png");
+    background-image: url("./Images/name.png");
     background-repeat: no-repeat;
     background-size: 100vh;
     background-position: center;
     z-index: -1;
     opacity: 1;
 
-    transition: top 1.5s, background-size 1s, background-position 1s;
+    transition: top 1.5s, background-size 1s, background-position 1s, opacity 1.5s;
     animation: lightningName 4s linear;
 }
 
@@ -130,6 +194,7 @@ p {
 .homeText {
     display: flex;
     flex-direction: column;
+    width: 75%;
 
     transition: opacity 1.5s;
 }
@@ -275,6 +340,18 @@ p {
     transition: opacity 1.5s;
 }
 
+.backButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    gap: 1em;
+    bottom: 5em;
+    width: 100%;
+
+    transition: opacity 1.5s;
+}
+
 .social {
     display: flex;
     justify-content: center;
@@ -292,4 +369,55 @@ p {
 .socials img:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid white;
+    border-radius: 20%;
+}
+
+.projects {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    position: absolute;
+
+    transition: 0.75s all;
+}
+
+/* @media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .projects {
+        flex-direction: row;
+    }
+} */
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 25em;
+
+    border-color: var(--yellow) !important;
+    border-width: 2.5px !important;
+}
+
+.project img {
+    width: 70%;
+}
+
+.project p {
+    margin: 0 1em;
+}
+
+.homeButton {
+    position: absolute;
+    bottom: -2em;
 }

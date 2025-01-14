@@ -1,0 +1,299 @@
+/*########## COLOUR PALLETE ##########*/
+:root {
+    --black: #141204;
+    --green: #88D18A;
+    --orange: #EAC435;
+    --dark-grey: #2F2F2F;
+    --grey: #757780;
+    --red: #FB4D3D;
+}
+
+body {
+    margin: 0;
+    background-color: var(--black);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*########## HEADER ##########*/
+
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    padding: 0 1em;
+    border-bottom: 1px solid var(--grey);
+    margin-top: 0;
+}
+
+/* Disables user selection (when you click and drag over text) for everything but the header */
+.main {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-text-select: none;
+    -webkit-user-select: none;
+}
+
+/*########## GUESS CONTAINER ##########*/
+
+.guessContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    cursor: default;
+}
+
+.guessRow {
+    display: flex;
+    gap: 0.5em;
+    transition: all 0.3s;
+}
+
+#lost {
+    position: absolute;
+    margin-top: 17.9em;
+    z-index: -1;
+    transition: all 0.3s;
+    transition-delay: 300ms;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    #lost {
+        margin-top: 22.9em;
+    }
+}
+
+.show {
+    margin-top: 27.1em !important;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .show {
+        margin-top: 34.1em !important;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.guessLetter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--grey);
+    width: 3em;
+    height: 3em;
+
+    text-align: center;
+    color: white;
+    transition: transform 1s, background-color 0.5s;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .guessLetter {
+        width: 4em;
+        height: 4em;
+    }
+}
+
+.rotateBack {
+    transform: rotate3d(0,1, 0, 180deg);
+}
+
+
+.rotateBack h1 {
+    display: none;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+.rotate h1 {
+    transform: rotateY(-180deg);
+}
+
+.guessLetter h1 {
+    position: absolute;
+    text-transform: capitalize;
+    margin: 0;
+
+    transition-delay: 0.3s;
+}
+
+.correct {
+    background-color: var(--green) !important;
+    border: none;
+    width: 3.0835em;
+    height: 3.0835em;
+}
+
+.partial {
+    background-color: var(--orange) !important;
+    border: none;
+    width: 3.0835em;
+    height: 3.0835em;
+}
+
+.incorrect {
+    background-color: var(--dark-grey) !important;
+    border: none;
+    width: 3.0835em;
+    height: 3.0835em;
+}
+
+.error {
+    background-color: var(--red) !important;
+    border: none;
+    width: 3.0835em;
+    height: 3.0835em;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .correct {
+        width: 4.0835em;
+        height: 4.0835em;
+    }
+    
+    .partial {
+        width: 4.0835em;
+        height: 4.0835em;
+    }
+    
+    .incorrect {
+        width: 4.0835em;
+        height: 4.0835em;
+    }
+    
+    .error {
+        width: 4.0835em;
+        height: 4.0835em;
+    }
+}
+
+/*########## GUESS KEYBOARD ##########*/
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25em;
+
+    margin-top: 7.5em;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .keyboard {
+        gap: 0.5em;
+        position: absolute;
+        bottom: 1em;
+        width: 100%;
+    }
+}
+
+.keyRow {
+    display: flex;
+    gap: 0.25em;
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .keyRow {
+        gap: 0.5em
+    }
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    border-radius: 0.25em;
+    
+    width: 1.72em;
+    height: 2em;
+
+    text-align: center;
+    color: white;
+    transition: all 0.1s;
+}
+
+@media only screen and (min-width: 425px) {
+    .key {
+        width: 2.4em;
+        height: 2.8em;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+    .key {
+        width: 3em;
+        height: 3.5em;
+    }
+
+    .key:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.key:active {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.bigKey {
+    width: 3em;
+}
+
+@media only screen and (min-width: 600px) {
+    .bigKey {
+        width: 4.5em;
+    }
+}
+
+.restartKey {
+    width: 8.5em;
+    background-color: var(--red);
+}
+
+.scoreKey {
+    width: 8.5em;
+    background-color: var(--green);
+}
+
+.key h3, h4 {
+    position: absolute;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.key h4 {
+    font-size: 0.8em;
+}
+
+@media only screen and (min-width: 600px) {
+    .key h4 {
+        font-size: 1em;
+    }
+}
+
+.icon {
+    font-size: 1.25em;
+}
+
+@media only screen and (min-width: 600px) {
+    .icon {
+        font-size: 1.5em;
+    }
+}

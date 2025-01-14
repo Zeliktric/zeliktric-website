@@ -1,16 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b89cec8.css",
-    "main.js": "/static/js/main.f6640a8d.js",
+    "main.css": "/static/css/main.978b4734.css",
+    "main.js": "/static/js/main.e7b563dc.js",
     "static/js/453.6aa7bdbe.chunk.js": "/static/js/453.6aa7bdbe.chunk.js",
-    "static/media/Bolts.png": "/static/media/Bolts.1d54c9a5a886fca5034c.png",
+    "static/media/react.png": "/static/media/react.b470ed964f194ee61840.png",
+    "static/media/htmlcssjs.png": "/static/media/htmlcssjs.058ebadcdf0522755eae.png",
+    "static/media/python.png": "/static/media/python.756bd016d0691956a80e.png",
+    "static/media/cs.png": "/static/media/cs.2eb9ab22db8ccc2d8d2b.png",
+    "static/media/java.png": "/static/media/java.f456f2d93d1f117b6eec.png",
+    "static/media/words.txt": "/static/media/words.00b851a61397f0ef66b8.txt",
+    "static/media/bolts.png": "/static/media/bolts.1d54c9a5a886fca5034c.png",
+    "static/media/wordle.png": "/static/media/wordle.f6c6fbdbc305342c470d.png",
     "index.html": "/index.html",
-    "main.2b89cec8.css.map": "/static/css/main.2b89cec8.css.map",
-    "main.f6640a8d.js.map": "/static/js/main.f6640a8d.js.map",
+    "main.978b4734.css.map": "/static/css/main.978b4734.css.map",
+    "main.e7b563dc.js.map": "/static/js/main.e7b563dc.js.map",
     "453.6aa7bdbe.chunk.js.map": "/static/js/453.6aa7bdbe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b89cec8.css",
-    "static/js/main.f6640a8d.js"
+    "static/css/main.978b4734.css",
+    "static/js/main.e7b563dc.js"
   ]
 }
