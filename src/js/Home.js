@@ -165,7 +165,7 @@ export default function Home() {
             </div>
             
             <div className="homeText hide" ref={homeText}>
-                <p className="title">Hi, I"m <span className="yellow"><b>Zeliktric!</b></span></p>
+                <p className="title">Hi, I'm <span className="yellow"><b>Zeliktric!</b></span></p>
                 <p className="subtitle">Full-stack developer and game dev hobbyist</p>
 
                 <br/>
